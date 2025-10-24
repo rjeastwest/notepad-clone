@@ -1,0 +1,114 @@
+#include <windows.h>
+#include "resource.h"
+
+#ifndef VK_A
+#define VK_A 0x41
+#endif
+#ifndef VK_C
+#define VK_C 0x43
+#endif
+#ifndef VK_F
+#define VK_F 0x46
+#endif
+#ifndef VK_G
+#define VK_G 0x47
+#endif
+#ifndef VK_H
+#define VK_H 0x48
+#endif
+#ifndef VK_N
+#define VK_N 0x4E
+#endif
+#ifndef VK_O
+#define VK_O 0x4F
+#endif
+#ifndef VK_P
+#define VK_P 0x50
+#endif
+#ifndef VK_S
+#define VK_S 0x53
+#endif
+#ifndef VK_V
+#define VK_V 0x56
+#endif
+#ifndef VK_X
+#define VK_X 0x58
+#endif
+#ifndef VK_Z
+#define VK_Z 0x5A
+#endif
+
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",      IDM_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",  IDM_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",     IDM_FILE_SAVE
+        MENUITEM "Save &As...\tCtrl+Shift+S", IDM_FILE_SAVEAS
+        MENUITEM SEPARATOR
+        MENUITEM "Page Set&up...",    IDM_FILE_PAGESETUP
+        MENUITEM "&Print...\tCtrl+P", IDM_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",             IDM_FILE_EXIT
+    END
+
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",     IDM_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",      IDM_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",     IDM_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",    IDM_EDIT_PASTE
+        MENUITEM "De&lete\tDel",      IDM_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Find...\tCtrl+F",  IDM_EDIT_FIND
+        MENUITEM "Find &Next\tF3",    IDM_EDIT_FINDNEXT
+        MENUITEM "Replace...\tCtrl+H", IDM_EDIT_REPLACE
+        MENUITEM "&Go To...\tCtrl+G", IDM_EDIT_GOTO
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All\tCtrl+A", IDM_EDIT_SELECTALL
+        MENUITEM "Time/&Date\tF5",    IDM_EDIT_TIME_DATE
+    END
+
+    POPUP "F&ormat"
+    BEGIN
+        MENUITEM "&Word Wrap",        IDM_FORMAT_WORDWRAP, CHECKED
+        MENUITEM "&Font...",          IDM_FORMAT_FONT
+    END
+
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Notepad Clone", IDM_HELP_ABOUT
+    END
+END
+
+IDR_ACCEL ACCELERATORS
+BEGIN
+    VK_N, IDM_FILE_NEW, VIRTKEY, CONTROL
+    VK_O, IDM_FILE_OPEN, VIRTKEY, CONTROL
+    VK_S, IDM_FILE_SAVE, VIRTKEY, CONTROL
+    VK_S, IDM_FILE_SAVEAS, VIRTKEY, CONTROL, SHIFT
+    VK_P, IDM_FILE_PRINT, VIRTKEY, CONTROL
+    VK_Z, IDM_EDIT_UNDO, VIRTKEY, CONTROL
+    VK_X, IDM_EDIT_CUT, VIRTKEY, CONTROL
+    VK_C, IDM_EDIT_COPY, VIRTKEY, CONTROL
+    VK_V, IDM_EDIT_PASTE, VIRTKEY, CONTROL
+    VK_F, IDM_EDIT_FIND, VIRTKEY, CONTROL
+    VK_F3, IDM_EDIT_FINDNEXT, VIRTKEY
+    VK_H, IDM_EDIT_REPLACE, VIRTKEY, CONTROL
+    VK_G, IDM_EDIT_GOTO, VIRTKEY, CONTROL
+    VK_A, IDM_EDIT_SELECTALL, VIRTKEY, CONTROL
+    VK_F5, IDM_EDIT_TIME_DATE, VIRTKEY
+END
+
+IDD_GOTO DIALOGEX 0, 0, 182, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Go To Line"
+FONT 9, "Segoe UI", 400, 0, 0x1
+BEGIN
+    LTEXT "Line number:", IDC_STATIC, 7, 10, 70, 12
+    EDITTEXT IDC_EDIT_GOTO, 7, 26, 168, 14, ES_NUMBER | ES_AUTOHSCROLL
+    DEFPUSHBUTTON "Go To", IDOK, 62, 52, 50, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 122, 52, 50, 14
+END
