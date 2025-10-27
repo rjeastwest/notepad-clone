@@ -1,0 +1,21 @@
+Initial prompting used to create this project:
+
+Me: create a windows C++ program that acts just like notepad. it only needs to be able to edit a single document at a time. it needs all the normal file open/close/save functions along with all the regular CUA editing functions. it should be buildable using Visual Studio.
+
+ChatGPT: build initial code
+
+ChatGPT: fix errors
+
+Me: the delete key doesn't work as it should, and the backspace key is bringing up the Replace text dialog.
+
+ChatGPT: fix errors
+
+Me: can you change the default font to Consolas, 11pt.
+
+Me: when trying to open a file, i get a dialog that says "unable to open the file".
+
+ChatGPT: fix errors
+
+Me: When using the Find feature, it doesn't highlight the found text until after closing the dialog window.
+
+ChatGPT: fix errors
