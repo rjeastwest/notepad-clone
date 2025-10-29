@@ -9,6 +9,10 @@ A lightweight single-document text editor for Windows built with the Win32 API. 
 - Word wrap toggle, font selection dialog, and status bar with caret position.
 - Drag-and-drop file loading and accelerator keys matching Notepad defaults.
 
+## Not Yet Implemented
+- .LOG support
+- Printing support
+
 ## Building
 1. Open `NotepadClone.sln` in Visual Studio 2022 (or newer).
 2. Choose your preferred configuration (Debug/Release, Win32/x64).
