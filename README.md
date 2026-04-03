@@ -2,6 +2,8 @@
 
 A lightweight single-document text editor for Windows built with the Win32 API. It mirrors the core experience of the classic Notepad application, including standard file commands and Common User Access (CUA) editing shortcuts.
 
+Built entirely with ChatGPT
+
 ## Features
 - New/Open/Save/Save As with UTF-8 text persistence and change tracking prompts.
 - Edit operations: undo, cut, copy, paste, delete, select all, time/date stamp.
